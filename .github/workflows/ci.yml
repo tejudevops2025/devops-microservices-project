@@ -2,7 +2,7 @@ job:
   build:
     runs-on: ubuntu-latest
 
-steps:
+step:
   -name:  Checkout Repository 
   uses: actions/checkout@v4
   -name: Set up Java 17
