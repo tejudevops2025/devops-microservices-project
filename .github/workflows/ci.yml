@@ -1,3 +1,9 @@
+name: User Service CI Pipeline
+on: 
+  push:
+    braches:
+      - main
+        
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,19 +20,19 @@ jobs:
       
          with:
           
-           distibution: 'temurin'
+           distribution: 'temurin'
          
            java-version: '17'
      
        - name: Build  Application
          
-         run:
+         run: |
            
            cd app/user-service
            ./mvnw clean package -DskipTests
        - name: Build docker image
      
-         run:
+         run: |
           
            cd app/user-service
-           docker build -t user-service
+           docker build -t user-service .
